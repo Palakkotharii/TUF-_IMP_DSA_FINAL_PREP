@@ -1,0 +1,35 @@
+vector<int> getSecondOrderElements(int n, vector<int> a) {
+   
+     // App1 : using Sorting   : O(NLOGN)
+      vector<int>v;
+      sort(a.begin() , a.end());
+      int Largest= a[n-1];
+       int secondLarge = INT_MIN;
+      for(int i= n-2 ; i>=0 ; --i)
+      {
+          if(a[i] > secondLarge && Largest!= secondLarge )
+          {
+              secondLarge= a[i];
+              break;
+          }
+      }
+       v.push_back(secondLarge);
+
+        int smallest= a[0];
+       int secondSmall = INT_MAX;
+      for(int i=1; i<n ; ++i)
+      {
+          if(a[i] < secondSmall && smallest!= secondSmall)
+          {
+              secondSmall= a[i];
+              break;
+          }
+      }
+       v.push_back(secondSmall);
+      return v;
+      
+
+    // instead of using a sort funciton we can direclty use the loop for finding largest and Smallest for Optimal soltuion i.e O(N) Time Complexity.
+
+
+}
