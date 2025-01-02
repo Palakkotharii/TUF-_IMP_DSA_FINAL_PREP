@@ -12,12 +12,12 @@ using namespace std;
 
 class Solution {
   public:
-//    App1 :
+//    App1 : O(N) : TC  : Optimal 
     // int largest(vector<int> &arr) {
     //     return *max_element(arr.begin() , arr.end());
     // }
     
-    /* App2 :
+    /* App2 :O(N) : Optimal 
      int largest(vector<int> &arr) {
         int maxi =INT_MIN;
         for(int i=0 ;i<arr.size() ; ++i)
@@ -31,7 +31,7 @@ class Solution {
     }
     */
     
-    //  App3:
+    //  App3: O(NlogN) :Brute Force Solution 
      int largest(vector<int> &arr) {
          int n = arr.size();
         sort(arr.begin() , arr.end());
