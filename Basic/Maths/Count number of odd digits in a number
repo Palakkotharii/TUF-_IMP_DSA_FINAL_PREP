@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int countOddDigit(int n) {
+       int Oddcount =0;
+         if(n==0)
+        {
+            return 0;
+        }
+        while(n !=0)
+        {
+            int rem = n%10;
+            if(rem &1)
+            {
+                Oddcount++;
+            }
+            n= n/10;
+        }
+         
+        return Oddcount;
+    
+    }
+};
