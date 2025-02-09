@@ -1,0 +1,24 @@
+class Solution {
+   public:
+    int mostFrequentElement(vector<int>& nums) {
+        unordered_map<int, int> mp;
+
+        for (int i = 0; i < nums.size(); ++i) {
+            mp[nums[i]]++;
+        }
+
+        int maxFreq = 0, mini = INT_MAX;
+
+        // Find the most frequent element with the smallest value
+        for (auto it : mp) {
+            if (it.second > maxFreq) {
+                maxFreq = it.second;
+                mini = it.first;
+            } else if (it.second == maxFreq) {
+                mini = min(mini, it.first);
+            }
+        }
+
+        return mini;
+    }
+};
